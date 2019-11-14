@@ -1,0 +1,12 @@
+all:
+  children:
+    serverGroupA:
+      hosts:
+        server-1:
+        server-2:
+    serverGroupB:
+      hosts:
+        server-2:
+        server-3:
+
+# Note: server-2 is in both groups.

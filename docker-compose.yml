@@ -1,0 +1,54 @@
+version: "3.5"
+services:
+
+  server-1:
+    image: ansible-demo
+    hostname: server-1
+    container_name: server-1
+    command: bash -c 'service ssh start & tail -F /dev/null'
+    expose:
+      - "22"
+    volumes:
+      - ${PWD}/ssh/id_rsa.pub:/root/.ssh/authorized_keys
+    networks:
+      - ansible
+
+  server-2:
+    image: ansible-demo
+    hostname: server-2
+    container_name: server-2
+    command: bash -c 'service ssh start & tail -F /dev/null'
+    expose:
+      - "22"
+    volumes:
+      - ${PWD}/ssh/id_rsa.pub:/root/.ssh/authorized_keys
+    networks:
+      - ansible
+
+  server-3:
+    image: ansible-demo
+    hostname: server-3
+    container_name: server-3
+    command: bash -c 'service ssh start & tail -F /dev/null'
+    expose:
+      - "22"
+    volumes:
+      - ${PWD}/ssh/id_rsa.pub:/root/.ssh/authorized_keys
+    networks:
+      - ansible
+
+  ansible-master:
+    image: ansible-demo
+    hostname: ansible-master
+    container_name: ansible-master
+    expose:
+      - "22"
+    tty: true
+    volumes:
+      - ${PWD}/playbook/:/etc/ansible/
+      - ${PWD}/ssh/:/root/.ssh/
+    networks:
+      - ansible
+
+networks:
+  ansible:
