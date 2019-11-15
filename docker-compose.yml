@@ -5,7 +5,6 @@ services:
     image: ansible-demo
     hostname: server-1
     container_name: server-1
-    command: bash -c 'service ssh start & tail -F /dev/null'
     expose:
       - "22"
     volumes:
@@ -17,7 +16,6 @@ services:
     image: ansible-demo
     hostname: server-2
     container_name: server-2
-    command: bash -c 'service ssh start & tail -F /dev/null'
     expose:
       - "22"
     volumes:
@@ -29,7 +27,6 @@ services:
     image: ansible-demo
     hostname: server-3
     container_name: server-3
-    command: bash -c 'service ssh start & tail -F /dev/null'
     expose:
       - "22"
     volumes:
@@ -44,6 +41,7 @@ services:
     expose:
       - "22"
     tty: true
+    command: bash
     volumes:
       - ${PWD}/playbook/:/etc/ansible/
       - ${PWD}/ssh/:/root/.ssh/
