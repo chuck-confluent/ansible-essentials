@@ -1,5 +1,7 @@
 # Read Me!
 
+Use `docker-compose up -d` to start three ubuntu servers and an Ansible master. Take control of the Ansible master with `docker-compose exec ansible-master bash`.
+
 Make sure to put the proper permissions on the private key on the Ansible Master.
 
 From within the `ansible-master` container:
