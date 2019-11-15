@@ -13,4 +13,4 @@ RUN sed -i \
         's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' \
         /etc/ssh/sshd_config
 
-CMD ["bash", "-c", "service ssh start & tail -F /dev/null"]
+CMD ["bash", "-c", "chown root /root/.ssh/authorized_keys && service ssh start && tail -F /dev/null"]
