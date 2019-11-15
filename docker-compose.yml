@@ -2,7 +2,7 @@ version: "3.5"
 services:
 
   server-1:
-    image: ansible-demo
+    image: cnfltraining/ansible:0.5
     hostname: server-1
     container_name: server-1
     expose:
@@ -13,7 +13,7 @@ services:
       - ansible
 
   server-2:
-    image: ansible-demo
+    image: cnfltraining/ansible:0.5
     hostname: server-2
     container_name: server-2
     expose:
@@ -24,7 +24,7 @@ services:
       - ansible
 
   server-3:
-    image: ansible-demo
+    image: cnfltraining/ansible:0.5
     hostname: server-3
     container_name: server-3
     expose:
@@ -35,7 +35,7 @@ services:
       - ansible
 
   ansible-master:
-    image: ansible-demo
+    image: cnfltraining/ansible:0.5
     hostname: ansible-master
     container_name: ansible-master
     expose:
